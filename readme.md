@@ -30,6 +30,7 @@ Run deploy.sh
 ./minikubeK8S/scripts/deploy.sh
 ```
 
+###### After succesfully deployed app should be ready to open application in http://127.0.0.1:8090/
 
 
 ## Execution of commands automatically in sequence (OPTION 2  non-automatic DEPLOY)
@@ -63,6 +64,7 @@ kubectl apply -f mysql-deployment.yaml
 kubectl apply -f spring-petclinc-kotlin-deployment.yaml
 ```
 
+###### After succesfully deployed app should be ready to open application in http://127.0.0.1:8090/
 
 ## Undeploy all deployments (OPTION 1 automatic UNDEPLOY)
 
