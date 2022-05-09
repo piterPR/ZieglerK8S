@@ -1,11 +1,12 @@
+## Short overview
+The application was run on a popular instance for use on the local machine minikube. (Link with installation steps below)
+All the documentation can be found in the README.md file. I tried to change the application.properties file in order to set global variables for the database connection, however when building a new image it turned out that version gradle:4.7.0-jdk8-alpine is not available, which contributed to leaving the containerization in the current version. 
+
+
+
 ## To run k8s distro on local machine 
 Firstly we need to configure minikube on local machine, follow this link to setup minikube to local development.
 https://minikube.sigs.k8s.io/docs/start/
-
-
-## Short overview
-All work can be found in an accessible repository on the master branch under the folder minikubeK8S. The application was run on a popular instance for use on the local machine minikube. All the documentation can be found in the README.md file. I tried to change the application.properties file in order to set global variables for the database connection, however when building a new image it turned out that version gradle:4.7.0-jdk8-alpine is not available, which contributed to leaving the containerization in the current version. 
-
 
 
 ## Start local cluster with dashboard
