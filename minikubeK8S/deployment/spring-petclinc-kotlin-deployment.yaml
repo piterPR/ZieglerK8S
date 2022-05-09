@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-petclinc-kotlin
+  labels:
+    app: spring-petclinc-kotlin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-petclinc-kotlin
+  template:
+    metadata:
+      labels:
+        app: spring-petclinc-kotlin
+    spec:
+      containers:
+        - name: spring-petclinc-kotlin
+          image: springcommunity/spring-petclinic-kotlin
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always        
+
+
+
+

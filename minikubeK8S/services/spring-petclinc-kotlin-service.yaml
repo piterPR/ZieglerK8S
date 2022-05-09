@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-petclinc-kotlin-service
+  namespace: default
+  labels:
+    app: spring-petclinc-kotlin
+spec:
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8080
+  selector:
+    app: spring-petclinc-kotlin
+  type: LoadBalancer
