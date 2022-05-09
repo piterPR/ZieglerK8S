@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+    tier: database
+spec:
+  selector: 
+    matchLabels:
+      app: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels: 
+        app: mysql
+        tier: database
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.7.8
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+          - configMapRef:
+              name: mysqlconfigmap
+          ports:
+            - containerPort: 3307
+              name: mysql
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql-persistance-storage
+      volumes:
+        - name: mysql-persistance-storage
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim
